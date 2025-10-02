@@ -1,411 +1,539 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique - Montador de Móveis</title>
+    <title>Montador de Móveis - Profissional e Confiável</title>
     <style>
-        /* Reset e estilos gerais */
+        /* Reset e configurações gerais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        :root {
+            --azul-principal: #092d4d;
+            --laranja-principal: #ed852b;
+            --azul-claro: #0d3a61;
+            --laranja-claro: #f59a50;
+            --branco: #ffffff;
+            --cinza-claro: #f5f5f5;
+            --cinza-escuro: #333333;
+        }
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
             line-height: 1.6;
         }
-        
+
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        h1, h2, h3 {
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        /* Cabeçalho */
+
+        /* Header e Navegação */
         header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px 0;
+            background-color: var(--azul-principal);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
-        .header-content {
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
-            font-size: 1.8rem;
+            height: 80px;
+            width: 180px;
+            background-color: var(--branco);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
             font-weight: bold;
+            color: var(--azul-principal);
         }
-        
-        .logo span {
-            color: #3498db;
+
+        .minhalogo {
+            padding-top: 5px;
+            height: 70px;
+            width: 160px;
         }
-        
-        /* Hero Section */
+
+        .contato-header {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: center;
+            color: var(--branco);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contato-item:hover {
+            color: var(--laranja-principal);
+        }
+
+        .contato-item i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        /* Seção Hero */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(9, 45, 77, 0.8), rgba(9, 45, 77, 0.9)), url('img/Fundo.png');
             background-size: cover;
             background-position: center;
-            color: white;
-            text-align: center;
+            color: var(--branco);
             padding: 100px 0;
+            text-align: center;
         }
-        
+
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: white;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
         }
-        
-        .btn {
+
+        .btn-orcamento {
             display: inline-block;
-            background-color: #3498db;
-            color: white;
+            background-color: var(--laranja-principal);
+            color: var(--branco);
             padding: 12px 30px;
-            border-radius: 5px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--laranja-principal);
         }
-        
-        .btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
+
+        .btn-orcamento:hover {
+            background-color: transparent;
+            color: var(--laranja-principal);
         }
-        
-        /* Serviços */
-        .services {
-            background-color: white;
+
+        /* Seção Sobre */
+        .sobre {
+            padding: 80px 0;
+            background-color: var(--branco);
         }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
         }
-        
-        .service-card {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+
+        .sobre-texto {
+            flex: 1;
         }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
+
+        .sobre-texto h2 {
+            color: var(--azul-principal);
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: #3498db;
+
+        .sobre-texto p {
             margin-bottom: 15px;
         }
-        
-        /* Trabalhos */
-        .works {
-            background-color: #f8f9fa;
+
+        .sobre-imagem {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .works-header {
+
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Seção Galeria */
+        .galeria {
+            padding: 80px 0;
+            background-color: var(--cinza-claro);
+        }
+
+        .galeria h2 {
             text-align: center;
+            color: var(--azul-principal);
+            font-size: 2rem;
             margin-bottom: 40px;
         }
-        
-        .instagram-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .instagram-link:hover {
-            text-decoration: underline;
-        }
-        
-        .instagram-grid {
+
+        .grid-galeria {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 20px;
         }
-        
-        .instagram-item {
-            aspect-ratio: 1;
-            background-color: #ddd;
-            border-radius: 5px;
+
+        .item-galeria {
+            position: relative;
             overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1 / 1;
         }
-        
-        .instagram-item img {
+
+        .item-galeria img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s;
         }
-        
-        .instagram-item:hover img {
-            transform: scale(1.05);
+
+        .item-galeria:hover img {
+            transform: scale(1.1);
         }
-        
-        /* Contato */
-        .contact {
-            background-color: white;
+
+        /* Seção Serviços */
+        .servicos {
+            padding: 80px 0;
+            background-color: var(--branco);
         }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .contact-item {
-            flex: 1;
-            min-width: 250px;
+
+        .servicos h2 {
             text-align: center;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-        
-        .contact-icon {
+            color: var(--azul-principal);
             font-size: 2rem;
-            color: #3498db;
+            margin-bottom: 40px;
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card-servico {
+            background-color: var(--cinza-claro);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-servico:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-servico i {
+            font-size: 40px;
+            color: var(--laranja-principal);
+            margin-bottom: 20px;
+        }
+
+        .card-servico h3 {
+            color: var(--azul-principal);
             margin-bottom: 15px;
         }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        
-        /* Rodapé */
+
+        /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            padding: 50px 0 20px;
         }
-        
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--laranja-principal);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            margin-bottom: 10px;
+            display: block;
+            color: var(--branco);
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--laranja-principal);
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .rede-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--laranja-principal);
+            border-radius: 50%;
+            color: var(--branco);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .rede-social:hover {
+            background-color: var(--laranja-claro);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
         /* Responsividade */
-        @media (max-width: 768px) {
-            .instagram-grid {
+        @media (max-width: 992px) {
+
+            .grid-galeria,
+            .grid-servicos,
+            .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
+            .sobre-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contato-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
         }
-        
-        @media (max-width: 480px) {
-            .instagram-grid {
+
+        @media (max-width: 576px) {
+
+            .grid-galeria,
+            .grid-servicos,
+            .footer-container {
                 grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .sobre,
+            .galeria,
+            .servicos {
+                padding: 50px 0;
             }
         }
     </style>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Cabeçalho -->
+    <!-- Header -->
     <header>
-        <div class="container header-content">
-            <div class="logo">Pedro <span>Henrique</span></div>
-            <nav>
-                <a href="#servicos" class="btn">Serviços</a>
-            </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- SUA LOGO AQUI -->
+                <span><img src="img/Logo2.png" class="minhalogo"></span>
+            </div>
+            <div class="contato-header">
+                <a href="https://wa.me/5534996974084" class="contato-item" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>(34) 99697-4084</span>
+                </a>
+                <a href="https://www.instagram.com/montadordemoveisudi" class="contato-item" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>@montadordemoveisudi</span>
+                </a>
+                <a href="#" class="contato-item" target="_blank">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span>Uberlândia-MG</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Seção Hero -->
     <section class="hero">
         <div class="container">
             <h1>Montagem Profissional de Móveis</h1>
-            <p>Serviço especializado em montagem de todos os tipos de móveis convencionais. Atendimento rápido, eficiente e com qualidade garantida.</p>
-            <a href="https://wa.me/5534996974084" class="btn">Solicitar Orçamento</a>
+            <p>Serviço especializado em montagem de móveis convencionais, com qualidade, agilidade e total segurança.
+            </p>
+            <a href="https://wa.me/5534996974084?text=Olá! Gostaria de solicitar um orçamento para montagem de móveis."
+                class="btn-orcamento" target="_blank">
+                <i class="fas fa-comment-dollar"></i> Solicitar Orçamento
+            </a>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="services">
+    <!-- Seção Sobre -->
+    <section class="sobre">
+        <div class="container sobre-container">
+            <div class="sobre-texto">
+                <h2>Profissionalismo e Qualidade</h2>
+                <p>Com <strong>10 anos</strong> de experiência no mercado, ofereço um serviço de montagem de móveis completo e
+                    personalizado. Trabalho com diversos tipos de móveis, desde os mais simples até os mais complexos.
+                </p>
+                <p>Utilizo ferramentas adequadas e técnicas específicas para garantir que seus móveis sejam montados com
+                    perfeição, durabilidade e segurança.</p>
+                <p>Atendo residências, escritórios e comércios, sempre com pontualidade, organização e limpeza.</p>
+            </div>
+            <div class="sobre-imagem">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Profissional montando móveis">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Galeria -->
+    <section class="galeria">
         <div class="container">
-            <h2>Serviços Oferecidos</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🛏️</div>
-                    <h3>Guarda-Roupas</h3>
-                    <p>Montagem profissional de guarda-roupas de todos os tamanhos e modelos.</p>
+            <h2>Nossos Trabalhos</h2>
+            <div class="grid-galeria">
+                <!-- Imagem 1 -->
+                <div class="item-galeria">
+                    <img src="img/IMG1.jpg" alt="Móvel montado 1">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📺</div>
-                    <h3>Painéis e TV</h3>
-                    <p>Instalação de painéis e montagem de suportes para televisão.</p>
+                <!-- Imagem 2 -->
+                <div class="item-galeria">
+                    <img src="img/IMG2.jpg" alt="Móvel montado 2">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🍽️</div>
-                    <h3>Armários de Cozinha</h3>
-                    <p>Montagem de armários e móveis para cozinha.</p>
+                <!-- Imagem 3 -->
+                <div class="item-galeria">
+                    <img src="img/IMG3.jpg" alt="Móvel montado 3">
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🗄️</div>
-                    <h3>Cômodas e Criados-Mudos</h3>
-                    <p>Montagem de cômodas, criados-mudos e outros móveis convencionais.</p>
+                <!-- Imagem 4 -->
+                <div class="item-galeria">
+                    <img src="img/IMG4.jpg" alt="Móvel montado 4">
+                </div>
+                <!-- Imagem 5 -->
+                <div class="item-galeria">
+                    <img src="img/IMG5.jpg" alt="Móvel montado 5">
+                </div>
+                <!-- Imagem 6 -->
+                <div class="item-galeria">
+                    <img src="img/IMG6.jpg" alt="Móvel montado 6">
+                </div>
+                <!-- Imagem 7 -->
+                <div class="item-galeria">
+                    <img src="img/IMG7.jpg"
+                        alt="Móvel montado 7">
+                </div>
+                <!-- Imagem 8 -->
+                <div class="item-galeria">
+                    <img src="img/IMG8.jpg"
+                        alt="Móvel montado 8">
+                </div>
+                <!-- Imagem 9 -->
+                <div class="item-galeria">
+                    <img src="img/IMG9.jpg"
+                        alt="Móvel montado 9">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trabalhos -->
-    <section class="works">
+    <!-- Seção Serviços -->
+    <section class="servicos">
         <div class="container">
-            <div class="works-header">
-                <h2>Veja Nossos Trabalhos</h2>
-                <p>Siga nosso perfil no Instagram: <a href="https://instagram.com/montadordemoveisudi" target="_blank" class="instagram-link">@montadordemoveisudi</a></p>
-            </div>
-            <div class="instagram-grid" id="instagram-feed">
-                <!-- As imagens do Instagram serão carregadas aqui -->
-                <!-- Para adicionar suas imagens, substitua os src abaixo pelos links das suas imagens do Instagram -->
-                <div class="instagram-item">
-                    <img src="img/img1.jpeg" alt="Trabalho 1">
+            <h2>Nossos Serviços</h2>
+            <div class="grid-servicos">
+                <div class="card-servico">
+                    <i class="fas fa-couch"></i>
+                    <h3>Montagem de Móveis</h3>
+                    <p>Montagem completa de móveis em geral, desmontagem para mudança e instalação de suportes de TV</p>
                 </div>
-                <div class="instagram-item">
-                    <img src="img/img2.jpeg" alt="Trabalho 2">
+                <div class="card-servico">
+                    <i class="fas fa-tools"></i>
+                    <h3>Reparos e Ajustes</h3>
+                    <p>Reparos, ajustes e manutenção em móveis já montados, garantindo maior durabilidade.</p>
                 </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 3">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 4">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 5">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 6">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 7">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 8">
-                </div>
-                <div class="instagram-item">
-                    <img src="https://via.placeholder.com/300" alt="Trabalho 9">
+                <div class="card-servico">
+                    <i class="fas fa-home"></i>
+                    <h3>Instalação Residencial</h3>
+                    <p>Atendimento com agendamento prévio e horários flexíveis, inclusive finais de semana</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Atendimento com horários flexíveis, inclusive finais de semana.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <h3>Telefone/WhatsApp</h3>
-                    <p>(34) 99697-4084</p>
-                    <a href="https://wa.me/5534996974084" class="whatsapp-btn" target="_blank">Enviar Mensagem</a>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📷</div>
-                    <h3>Instagram</h3>
-                    <p>@montadordemoveisudi</p>
-                    <a href="https://instagram.com/montadordemoveisudi" class="btn" target="_blank">Seguir</a>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
-                    <h3>Horários</h3>
-                    <p>Segunda a Domingo</p>
-                    <p>Horários Flexíveis</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Pedro Henrique - Montador de Móveis. Todos os direitos reservados.</p>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <a href="https://wa.me/5534996974084" target="_blank">
+                        <i class="fab fa-whatsapp"></i> (34) 99697-4084
+                    </a>
+                    <a href="https://www.instagram.com/montadordemoveisudi" target="_blank">
+                        <i class="fab fa-instagram"></i> @montadordemoveisudi
+                    </a>
+                    <!-- <p><i class="fas fa-envelope"></i> montadordemoveis@exemplo.com</p> -->
+                </div>
+                <div class="footer-col">
+                    <h3>Serviços</h3>
+                    <p>Montagem de Móveis</p>
+                    <p>Reparos e Ajustes</p>
+                    <p>Instalação Residencial</p>
+                    <p>Móveis Planejados</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Atendimento</h3>
+                    <p>Uberlândia-MG</p>
+                    <p>Atendimento com hora marcada</p>
+                    <p>Orçamento sem compromisso</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Montador de Móveis - Todos os direitos reservados</p>
+            </div>
         </div>
     </footer>
-
-    <script>
-        // Função para carregar as imagens do Instagram
-        function carregarImagensInstagram() {
-            // Aqui você pode adicionar os links das suas imagens do Instagram
-            // Substitua os URLs abaixo pelos links diretos das suas imagens do Instagram
-            const imagensInstagram = [
-                'img/img1.jpeg',
-                'img/img2.jpeg',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300',
-                'https://via.placeholder.com/300'
-            ];
-            
-            const grid = document.getElementById('instagram-feed');
-            const itens = grid.getElementsByClassName('instagram-item');
-            
-            // Atualiza as imagens
-            for (let i = 0; i < itens.length; i++) {
-                if (imagensInstagram[i]) {
-                    itens[i].querySelector('img').src = imagensInstagram[i];
-                }
-            }
-        }
-        
-        // Carrega as imagens quando a página é carregada
-        document.addEventListener('DOMContentLoaded', carregarImagensInstagram);
-    </script>
 </body>
+
 </html>
